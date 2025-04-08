@@ -44,10 +44,10 @@ jobs:
         sed -i 's|<base href="[^"]*">|<base href="/${{ github.event.repository.name }}/">|' ./dist/index.html
     - name: Update Resource Paths
       run: find ./dist -maxdepth 1 -type f ! -name 'sw*.js' ! -name 'workbox*.js' -name '*.js' -exec sed -i -e "s|/src/assets|/${{ github.event.repository.name }}/src/assets|g" -e "s|url('/src/assets|url('/${{ github.event.repository.name }}/src/assets|g" {} +
-    - name: Update href Paths for base-view-styles.css
-      run: |
-        find ./dist -type f -exec sed -i "s|href='../../base-view-styles.css'|href='../../${{ github.event.repository.name }}/base-view-styles.css'|g" {} +;
-        find ./dist -type f -exec sed -i "s|href=\"../../base-view-styles.css\"|href=\"../../${{ github.event.repository.name }}/base-view-styles.css\"|g" {} +;
+    # - name: Update href Paths for base-view-styles.css
+    #   run: |
+    #     find ./dist -type f -exec sed -i "s|href='../../base-view-styles.css'|href='../../${{ github.event.repository.name }}/base-view-styles.css'|g" {} +;
+    #     find ./dist -type f -exec sed -i "s|href=\"../../base-view-styles.css\"|href=\"../../${{ github.event.repository.name }}/base-view-styles.css\"|g" {} +;
     - name: SPA routing handling
       run: cp ./dist/index.html ./dist/404.html
     - name: Upload build artifact to GitHub Pages
