@@ -1,6 +1,7 @@
-import { html, css, LitElement } from 'lit';
+import { html, css, LitElement, unsafeCSS } from 'lit';
 import { customElement, query } from 'lit/decorators.js';
 import { defineComponents, IgcAvatarComponent, IgcButtonComponent, IgcDialogComponent, IgcIconButtonComponent, IgcIconComponent, IgcListComponent, IgcListItemComponent, IgcRippleComponent } from 'igniteui-webcomponents';
+import baseStyles from '/base-view-styles.css?inline';
 
 defineComponents(IgcListComponent, IgcListItemComponent, IgcIconButtonComponent, IgcIconComponent, IgcRippleComponent, IgcAvatarComponent, IgcButtonComponent, IgcDialogComponent);
 
@@ -243,7 +244,7 @@ export default class Appointments extends LitElement {
   render() {
     return html`
       <link href='https://fonts.googleapis.com/icon?family=Material+Icons' rel='stylesheet'>
-      <link rel='stylesheet' href='../../ig-theme.css'>
+      <style>${unsafeCSS(baseStyles)}</style>
       <div class="row-layout group">
         <div class="column-layout group_1">
           <div class="column-layout group_2">

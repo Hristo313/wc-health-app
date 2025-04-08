@@ -1,8 +1,9 @@
-import { html, css, LitElement } from 'lit';
+import { html, css, LitElement, unsafeCSS } from 'lit';
 import { customElement, query } from 'lit/decorators.js';
 import { Router } from '@vaadin/router';
 import { routes } from './app-routing.js';
 import { defineComponents, IgcAvatarComponent, IgcIconButtonComponent, IgcIconComponent, IgcNavbarComponent, IgcNavDrawerComponent, IgcRippleComponent } from 'igniteui-webcomponents';
+import baseStyles from '/base-view-styles.css?inline';
 
 defineComponents(IgcNavbarComponent, IgcAvatarComponent, IgcIconButtonComponent, IgcIconComponent, IgcRippleComponent, IgcNavDrawerComponent);
 
@@ -125,7 +126,7 @@ export default class App extends LitElement {
   render() {
     return html`
       <link href='https://fonts.googleapis.com/icon?family=Material+Icons' rel='stylesheet'>
-      <link rel='stylesheet' href='../../ig-theme.css'>
+      <style>${unsafeCSS(baseStyles)}</style>
       <div class="row-layout main-navigation">
         <igc-navbar class="navbar">
           <div class="row-layout group">

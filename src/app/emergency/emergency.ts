@@ -1,5 +1,6 @@
-import { html, css, LitElement } from 'lit';
+import { html, css, LitElement, unsafeCSS } from 'lit';
 import { customElement } from 'lit/decorators.js';
+import baseStyles from '/base-view-styles.css?inline';
 
 @customElement('app-emergency')
 export default class Emergency extends LitElement {
@@ -57,7 +58,7 @@ export default class Emergency extends LitElement {
 
   render() {
     return html`
-      <link rel='stylesheet' href='../../ig-theme.css'>
+      <style>${unsafeCSS(baseStyles)}</style>
       <div class="column-layout demo-content">
         <img src="/src/assets/start-building.svg" class="image" />
         <h5 class="h5">

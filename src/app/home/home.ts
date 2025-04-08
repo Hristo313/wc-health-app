@@ -1,7 +1,8 @@
-import { html, css, LitElement } from 'lit';
+import { html, css, LitElement, unsafeCSS } from 'lit';
 import { customElement } from 'lit/decorators.js';
 import { Router } from '@vaadin/router';
 import { defineComponents, IgcIconButtonComponent, IgcIconComponent, IgcListComponent, IgcListItemComponent, IgcRippleComponent } from 'igniteui-webcomponents';
+import baseStyles from '/base-view-styles.css?inline';
 
 defineComponents(IgcIconComponent, IgcListComponent, IgcListItemComponent, IgcIconButtonComponent, IgcRippleComponent);
 
@@ -280,7 +281,7 @@ export default class Home extends LitElement {
   render() {
     return html`
       <link href='https://fonts.googleapis.com/icon?family=Material+Icons' rel='stylesheet'>
-      <link rel='stylesheet' href='../../ig-theme.css'>
+      <style>${unsafeCSS(baseStyles)}</style>
       <div class="column-layout group">
         <div class="row-layout group_1">
           <div @click="${() => Router.go(`/health-indicators`)}" class="column-layout group_2">

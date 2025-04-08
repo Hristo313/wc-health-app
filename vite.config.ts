@@ -26,7 +26,7 @@ export default defineConfig({
         { src: 'src/assets', dest: 'src' },
         { src: 'node_modules/@infragistics/igniteui-webcomponents-grids/grids/themes/light/material.css',
           dest: 'node_modules/@infragistics/igniteui-webcomponents-grids/grids/themes/light'},
-        { src: 'ig-theme.css', dest: '' }
+        // { src: 'ig-theme.css', dest: '' }
       ],
       silent: true,
     }),

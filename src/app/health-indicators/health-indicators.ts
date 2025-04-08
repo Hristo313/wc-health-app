@@ -1,4 +1,4 @@
-import { html, css, LitElement } from 'lit';
+import { html, css, LitElement, unsafeCSS } from 'lit';
 import { customElement, state } from 'lit/decorators.js';
 import { IgcCategoryChartModule } from '@infragistics/igniteui-webcomponents-charts';
 import { ModuleManager } from '@infragistics/igniteui-webcomponents-core';
@@ -9,6 +9,7 @@ import { WeightType } from '../models/PatientDashboard/weight-type';
 import { HeartRateType } from '../models/PatientDashboard/heart-rate-type';
 import { GlucoseType } from '../models/PatientDashboard/glucose-type';
 import { patientDashboardService } from '../services/PatientDashboard-service';
+import baseStyles from '/base-view-styles.css?inline';
 
 ModuleManager.register(IgcCategoryChartModule);
 
@@ -238,7 +239,7 @@ export default class HealthIndicators extends LitElement {
 
   render() {
     return html`
-      <link rel='stylesheet' href='../../ig-theme.css'>
+      <style>${unsafeCSS(baseStyles)}</style>
       <div class="row-layout group">
         <div class="column-layout group_1">
           <p class="typography__subtitle-2 text">
